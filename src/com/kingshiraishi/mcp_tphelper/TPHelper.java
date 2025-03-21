@@ -9,6 +9,10 @@ public class TPHelper extends JavaPlugin{
 
     @Override
     public void onEnable() {
+        saveDefaultConfig();
+
+        this.getCommand("tplist").setExecutor(new CommandTPList(this));
+
         getServer().getConsoleSender().sendMessage(ChatColor.BLUE + "[KingShiraishi]: TP Helper is enabled.");
     }
 

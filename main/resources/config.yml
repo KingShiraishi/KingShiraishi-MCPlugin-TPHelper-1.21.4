@@ -1,0 +1,5 @@
+gui:
+  title: "Players"
+
+messages:
+  player-only: "Players can only execute this command."
