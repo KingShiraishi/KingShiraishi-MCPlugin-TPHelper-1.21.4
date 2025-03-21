@@ -1,0 +1,8 @@
+gui:
+  title: "Players"
+
+messages:
+  player-only: "[ERROR] Players can only execute this command."
+  teleport-success: "Teleported to %s"
+  teleport-failure--no-other-players: "[ERROR] There's no players online."
+  teleport-failure--target-offline: "[ERROR] %s is OFFLINE"

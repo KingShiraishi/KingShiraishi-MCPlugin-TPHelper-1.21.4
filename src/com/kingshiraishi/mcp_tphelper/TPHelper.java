@@ -12,6 +12,7 @@ public class TPHelper extends JavaPlugin{
         saveDefaultConfig();
 
         this.getCommand("tplist").setExecutor(new CommandTPList(this));
+        getServer().getPluginManager().registerEvents(new GUITPListener(this), this);
 
         getServer().getConsoleSender().sendMessage(ChatColor.BLUE + "[KingShiraishi]: TP Helper is enabled.");
     }
