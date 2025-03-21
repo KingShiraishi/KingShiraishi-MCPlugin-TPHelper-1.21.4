@@ -3,3 +3,4 @@ gui:
 
 messages:
   player-only: "Players can only execute this command."
+  no-other-players: "There's no players online."

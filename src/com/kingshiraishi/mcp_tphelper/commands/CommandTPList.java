@@ -26,14 +26,29 @@ public class CommandTPList implements CommandExecutor {
             return true;
         }
 
+        List<? extends Player> otherPlayers = Bukkit.getOnlinePlayers().stream()
+                .filter(p -> !p.equals(player)).toList();
+
+        if (otherPlayers.isEmpty()) {
+            player.sendMessage(plugin.getConfig().getString("messages.no-other-players"));
+            return true;
+        }
+
         String guiTitle = plugin.getConfig().getString("gui.title");
-//        TODO: Get other players count
-//        int size = ((otherPlayers + 8) / 9) * 9;
-        int size = 27;
+        int size = ((otherPlayers.size() + 8) / 9) * 9;
 
         Inventory gui = Bukkit.createInventory(null, size, guiTitle);
-        player.openInventory(gui);
 
+        for (Player target : otherPlayers) {
+            ItemStack head = new ItemStack(Material.PLAYER_HEAD);
+            SkullMeta meta = (SkullMeta) head.getItemMeta();
+            meta.setOwningPlayer(target);
+            meta.setDisplayName("§a" + target.getName());
+            head.setItemMeta(meta);
+            gui.addItem(head);
+        }
+
+        player.openInventory(gui);
 
         return true;
     }
