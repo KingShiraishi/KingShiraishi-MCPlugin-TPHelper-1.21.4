@@ -1,8 +1,11 @@
 gui:
   title: "Players"
+  description--tp-random: "/tp @r"
 
 messages:
   player-only: "[ERROR] Players can only execute this command."
   teleport-success: "Teleported to %s"
+  teleport-success--to-you: "Teleported %s to yourself."
+  teleport-success--you-re-tpd: "Teleported to %s."
   teleport-failure--no-other-players: "[ERROR] There's no players online."
   teleport-failure--target-offline: "[ERROR] %s is OFFLINE"

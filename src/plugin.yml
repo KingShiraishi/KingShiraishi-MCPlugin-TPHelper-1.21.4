@@ -1,6 +1,6 @@
 name: KingShiraishi__MCPlugins_TPHelper
 main: com.kingshiraishi.mcp_tphelper.TPHelper
-version: 1.0.0
+version: 1.1.0
 api-version: 1.14
 commands:
   tplist:
