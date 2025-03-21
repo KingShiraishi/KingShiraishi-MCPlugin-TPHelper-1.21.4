@@ -1,0 +1,13 @@
+name: KingShiraishi__MCPlugins_TPHelper
+main: com.kingshiraishi.mcp_tphelper.TPHelper
+version: 0.0.1
+api-version: 1.14
+commands:
+  tplist:
+    description: Shows a custom GUI that helps your TP.
+    aliases:
+      - tl
+      - tplist
+      - th
+      - tphelper
+    usage: /tplist
