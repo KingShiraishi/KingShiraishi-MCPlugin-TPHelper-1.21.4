@@ -3,9 +3,21 @@ gui:
   description--tp-random: "/tp @r"
 
 messages:
-  player-only: "[ERROR] Players can only execute this command."
-  teleport-success: "Teleported to %s."
-  teleport-success--to-you: "Teleported %s to yourself."
-  teleport-success--you-re-tpd: "Teleported to %s."
-  teleport-failure--no-other-players: "[ERROR] There's no players online."
-  teleport-failure--target-offline: "[ERROR] %s is OFFLINE."
+  player-only:
+    ja: "[エラー] プレイヤーのみこのコマンドの実行を許可されています。"
+    en: "[ERROR] Players can only execute this command."
+  teleport-success:
+    ja: "%s に TP しました。"
+    en: "Teleported to %s."
+  teleport-success--to-you:
+    ja: "%s を自分に TP させました"
+    en: "Teleported %s to yourself."
+  teleport-success--you-re-tpd:
+    ja: "%s に TP しました。"
+    en: "Teleported to %s."
+  teleport-failure--no-other-players:
+    ja: "[失敗] オンラインのプレイヤーがいません。"
+    en: "[FAILURE] There's no players online."
+  teleport-failure--target-offline:
+    ja: "[失敗] %s はオフラインです。"
+    en: "[FAILURE] %s is OFFLINE."
