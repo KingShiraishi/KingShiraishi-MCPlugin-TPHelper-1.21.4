@@ -20,6 +20,13 @@ public class MessageUtil {
     }
 
     private static final Map<String, ChatColor> COLOR_MAP = Map.ofEntries(
+        Map.entry("bold", ChatColor.BOLD),
+        Map.entry("italic", ChatColor.ITALIC),
+        Map.entry("underline", ChatColor.UNDERLINE),
+        Map.entry("strikethrough", ChatColor.STRIKETHROUGH),
+        Map.entry("magic", ChatColor.MAGIC),
+        Map.entry("reset", ChatColor.RESET),
+
         Map.entry("black", ChatColor.BLACK),
         Map.entry("dark_blue", ChatColor.DARK_BLUE),
         Map.entry("dark_green", ChatColor.DARK_GREEN),
