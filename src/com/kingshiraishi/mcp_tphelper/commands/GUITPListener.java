@@ -1,5 +1,6 @@
 package com.kingshiraishi.mcp_tphelper.commands;
 
+import com.kingshiraishi.mcp_tphelper.utils.MessageUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -40,16 +41,13 @@ public class GUITPListener implements Listener {
                     .toList();
 
             if (candidates.isEmpty()) {
-                player.sendMessage(ChatColor.YELLOW + plugin.getConfig().getString("messages.teleport-failure--no-other-players"));
+                MessageUtil.sendStaticMessage(player, "messages.teleport-failure--no-other-players");
             } else {
                 Player target = candidates.get(new Random().nextInt(candidates.size()));
                 target.teleport(player); // teleport the target player to the executor
 
-                String toPlayerMsg = plugin.getConfig().getString("messages.teleport-success--to-you");
-                player.sendMessage(ChatColor.GREEN + String.format(toPlayerMsg, target.getName()));
-
-                String toTargetMsg = plugin.getConfig().getString("messages.teleport-success--you-re-tpd");
-                target.sendMessage(ChatColor.DARK_GREEN + String.format(toTargetMsg, target.getName()));
+                MessageUtil.sendStaticMessage(player, "messages.teleport-success--to-you", target.getName());
+                MessageUtil.sendStaticMessage(target, "messages.teleport-success--you-re-tpd", target.getName());
             }
 
             player.closeInventory();
@@ -67,12 +65,10 @@ public class GUITPListener implements Listener {
             player.teleport(target.getPlayer());
 
             // success
-            String successMsg = plugin.getConfig().getString("messages.teleport-success");
-            player.sendMessage(ChatColor.GREEN + String.format(successMsg, target.getName()));
+            MessageUtil.sendStaticMessage(player, "messages.teleport-success", target.getName());
         } else {
             // the target player is offline
-            String offlineMsg = plugin.getConfig().getString("messages.teleport-failure--target-offline");
-            player.sendMessage(ChatColor.YELLOW + String.format(offlineMsg, target.getName()));
+            MessageUtil.sendStaticMessage(player, "messages.teleport-failure--target-offline", target.getName());
         }
 
         player.closeInventory();

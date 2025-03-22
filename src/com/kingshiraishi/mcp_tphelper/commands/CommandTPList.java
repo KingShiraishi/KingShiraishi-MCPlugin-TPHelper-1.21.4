@@ -1,5 +1,6 @@
 package com.kingshiraishi.mcp_tphelper.commands;
 
+import com.kingshiraishi.mcp_tphelper.utils.MessageUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -24,7 +25,7 @@ public class CommandTPList implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player player)) {
-            sender.sendMessage(ChatColor.YELLOW + plugin.getConfig().getString("messages.player-only"));
+            MessageUtil.sendStaticMessage(sender, "messages.teleport-failure--no-other-players");
             return true;
         }
 
@@ -32,7 +33,7 @@ public class CommandTPList implements CommandExecutor {
                 .filter(p -> !p.equals(player)).toList();
 
         if (otherPlayers.isEmpty()) {
-            player.sendMessage(ChatColor.YELLOW + plugin.getConfig().getString("messages.teleport-failure--no-other-players"));
+            MessageUtil.sendStaticMessage(player, "messages.teleport-failure--no-other-players");
             return true;
         }
 
